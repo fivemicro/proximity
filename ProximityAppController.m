@@ -37,6 +37,8 @@
     if(monitoringEnabled.state == NSOnState && monitor.device) {
         monitor.requiredSignalStrength = requiredSignalStrength.integerValue;
         monitor.timeInterval = timerInterval.doubleValue;
+        monitor.inRangeDetectionCount = inRangeDetectionsCountInput.integerValue;
+        monitor.outOfRangeDetectionCount = outOfRangeDetectionsCountInput.integerValue;
         [monitor refresh];
         [monitor start];
     } else {
