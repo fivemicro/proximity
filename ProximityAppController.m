@@ -174,6 +174,18 @@
         monitor.timeInterval = timerInterval.doubleValue;
     }
 
+    //minimum IN range detections to trigger script
+	if( [[defaults stringForKey:@"inRangeDetectionsCount"] length] > 0 ) {
+		[inRangeDetectionsCountInput setStringValue:[defaults stringForKey:@"inRangeDetectionsCount"]];
+        monitor.inRangeDetectionCount = inRangeDetectionsCountInput.integerValue;
+    }
+    
+    //minimum OUT OF range detections to trigger script
+	if( [[defaults stringForKey:@"outOfRangeDetectionsCount"] length] > 0 ) {
+		[outOfRangeDetectionsCountInput setStringValue:[defaults stringForKey:@"outOfRangeDetectionsCount"]];
+        monitor.outOfRangeDetectionCount = outOfRangeDetectionsCountInput.integerValue;
+    }
+    
 	//require StrongSignal
 	[requiredSignalStrength setIntegerValue:[defaults integerForKey:@"requiredSignalStrength"]];
     monitor.requiredSignalStrength = requiredSignalStrength.integerValue;
@@ -255,7 +267,13 @@
 	
 	// Timer interval
 	[defaults setObject:[timerInterval stringValue] forKey:@"timerInterval"];
+    
+    //minimum IN range detections to trigger script
+	[defaults setObject:[inRangeDetectionsCountInput stringValue] forKey:@"inRangeDetectionsCount"];
 	
+    //minimum OUT OF range detections to trigger script
+	[defaults setObject:[outOfRangeDetectionsCountInput stringValue] forKey:@"outOfRangeDetectionsCount"];
+
 	// In range script
 	[defaults setURL:inRangeScriptURL forKey:@"inRangeScriptURL"];
 
