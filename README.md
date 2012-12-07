@@ -9,7 +9,7 @@ The intent of this project is for the source code to be critiqued by other devel
 
 ###Credits
 This version is based on proximity 1.71 from [Daij-Djan](https://github.com/Daij-Djan/proximity) which in turn is based on proximity 1.5 from [reduxcomputing](https://github.com/revned/proximity/). 
-Including fixed from [fivemicro](https://github.com/fivemicro/proximity)
+Including fixes from [fivemicro](https://github.com/fivemicro/proximity)
 
 ###Changes
 -
